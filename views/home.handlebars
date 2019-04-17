@@ -1,0 +1,135 @@
+<div class="row">
+    <div class="col-12">
+        <div class="jumbotron titleJumbotron">
+            <div class="headerDivJumbotron">
+                <div id="headerJumbotron"> Scraper</div>
+                <div id="subheaderJumbotron"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<nav class="navbar navbar-expand" id="navbar">
+
+    <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link navLink" href="/">Home</a>
+        </li>
+    </ul>
+    
+    <button type="button" class="btn btn-primary" id="submit">Scrape Articles</button>
+
+</nav>
+
+<div class="articleContainer">
+    <div class="row">
+
+        <div class="col-1">
+        </div>
+
+        <div class="col-10 articleColumn">
+            
+            {{#each articles}}
+
+                <div class="card">
+                    <div class="card-header">
+                        <a class="headlineLink" href={{link}} target="_blank">{{headline}}</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-2">
+                                <img class="articleImage" src={{photo}}>
+                            </div>
+
+                            <div class="col-8">
+                                <p>{{summary}}{{date}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            {{/each}}
+        </div>
+
+        <div class="col-1">
+        </div>
+
+    </div>
+</div>
+
+
+<div class="modal fade" id="scrapeArticlesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title scrapedTitle" >Articles Scraped</h5>
+      </div>
+      <div class="modal-body scrapedBody">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="closeScrapeButton" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="articleSavedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title articleSavedTitle" >Completed</h5>
+      </div>
+      <div class="modal-body articleSavedBody">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="closeArticleButton" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+{{!-- <div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Fluid jumbotron</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Active</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>
+
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="..." class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div> --}}
